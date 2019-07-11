@@ -1,0 +1,28 @@
+{
+  "name": "trip-split",
+  "version": "1.0.0",
+  "description": "build week project",
+  "main": "index.js",
+  "repository": "https://github.com/trip-split-bw/backend.git",
+  "author": "<douglasjordan2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.16.5",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "knex-cleaner": "^1.1.4",
+    "nodemon": "^1.19.1"
+  }
+}
