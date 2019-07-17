@@ -4,15 +4,15 @@ const { jwtSecret } = require('../../config/secret')
 module.exports = (req, res, next) => {
     const token = req.headers.authorization;
 
-    console.log('at auth')
     if (token) {
       jwt.verify(token, jwtSecret, (err, decodedToken) => {
         if (err) {
+          console.log(err)
           res.status(400).json(err)
         } else {
+          console.log('token confirmed: \n', decodedToken)
           req.decodedToken = decodedToken
-          console.log('at token decode')
-          next()
+          next();
         }
       })
     } else {

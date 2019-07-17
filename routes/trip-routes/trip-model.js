@@ -24,12 +24,9 @@ function filterByPrimary(id) {
     .where('primary_member_id', id)
 }
 
-function insert(primaryId, trip) {
+function insert(trip) {
   return db('trips')
-    .insert({
-      ...trip,
-      primary_member_id: primaryId
-    })
+    .insert(trip)
 }
 
 function update(tripId, changes) {
