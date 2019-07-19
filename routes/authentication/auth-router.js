@@ -41,13 +41,13 @@ router.post('/api/login', async (req, res) => {
           userId: user.id
         });
       } else {
-        res.status(401).json({ message: 'Invalid Credentials' });
+        res.status(401).json({ message: 'invalid credentials' });
       }
     } catch (err) {
       res.status(500).json(err)
     }
   } else {
-    res.status(403).json({ message: 'Invalid format' })
+    res.status(403).json({ message: 'invalid format' })
   }
 })
 

@@ -8,10 +8,10 @@ const nexmo = new Nexmo({
   apiSecret: '7ksUTaUWBQPUGn5y'
 }, { debug: true })
 
-router.post('/send-text', restricted, (req, res) => {
+router.post('/send-text', (req, res) => {
   const number = req.body.number
-  const text = req.body.text
-  const io = req.app.get('socketio')
+  const text = req.body.text + "\n \n" + "x"
+  // const io = req.app.get('socketio')
 
   nexmo.message.sendSms(
     '18582862879',
@@ -28,10 +28,11 @@ router.post('/send-text', restricted, (req, res) => {
           number: responseData.messages[0]['to']
         }
 
-        io.emit('smsStatus', data)
+        // io.emit('smsStatus', data)
       }
     }
   )
+  .then(res => res.send({ message: 'successful' }));
 });
 
 

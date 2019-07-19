@@ -42,7 +42,7 @@ router.post('/api/trips/', restricted, async (req, res) => {
       
       res.status(200).json(trip)
     } else {
-      res.status(403).json({ message: 'Invalid format' })
+      res.status(403).json({ message: 'invalid format' })
     }
   } catch (err) {
     res.status(500).json(err)
@@ -52,15 +52,15 @@ router.post('/api/trips/', restricted, async (req, res) => {
 router.put('/api/trips/:trip_id', restricted, validateData, async (req, res) => {
   const trip_id = parseInt(req.params.trip_id);
 
-  const { ride_fare } = req.body;
+  const { ride_fare, riders } = req.body;
 
-    if(ride_fare) {
+    if(ride_fare && riders) {
       await Trips.update(trip_id, req.body)
       const trip = await Trips.findTrip(trip_id)
 
       res.status(200).json(trip)
     } else {
-      res.status(403).json({ message: 'Invalid format' })
+      res.status(403).json({ message: 'invalid format' })
     }
 })
 

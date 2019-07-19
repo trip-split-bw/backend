@@ -36,7 +36,7 @@ router.put('/api/users/:id', restricted, validateData, async (req, res) => {
 
     res.status(200).json(user)
   } else {
-    res.status(403).json({ message: 'Invalid format' })
+    res.status(403).json({ message: 'invalid format' })
   }
 })
 

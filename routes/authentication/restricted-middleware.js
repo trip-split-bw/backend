@@ -10,12 +10,12 @@ module.exports = (req, res, next) => {
           console.log(err)
           res.status(400).json(err)
         } else {
-          console.log('token confirmed: \n', decodedToken)
+          // console.log('token confirmed: \n', decodedToken)
           req.decodedToken = decodedToken
           next();
         }
       })
     } else {
-      res.status(401).json({ message: 'Unauthorized'})
+      res.status(401).json({ message: 'unauthorized'})
     }
 }
