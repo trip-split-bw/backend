@@ -1,7 +1,6 @@
 const Nexmo = require('nexmo');
 const express = require('express');
 const router = express.Router();
-const restricted = require('../authentication/restricted-middleware');
 
 const nexmo = new Nexmo({
   apiKey: '53b35b88',
@@ -32,7 +31,6 @@ router.post('/send-text', (req, res) => {
       }
     }
   )
-  .then(res => res.send({ message: 'successful' }));
 });
 
 

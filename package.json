@@ -25,6 +25,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.16.5",
     "nexmo": "^2.4.1",
+    "pg": "^7.11.0",
     "socket.io": "^2.2.0",
     "sqlite3": "^4.0.6",
     "supertest": "^4.0.2",
@@ -33,5 +34,8 @@
   "devDependencies": {
     "knex-cleaner": "^1.1.4",
     "nodemon": "^1.19.1"
+  },
+  "engines": {
+    "node": "10.15.1"
   }
 }
